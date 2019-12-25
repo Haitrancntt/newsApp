@@ -1,0 +1,20 @@
+.news-cate-item {
+    float: left;
+    margin-right: 20px;
+    cursor: pointer;
+    text-decoration-line: underline;
+    color: coral;
+}
+
+.news-country-item {
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+    text-decoration-line: underline;
+    color: coral;
+}
+
+.custom-news-title-cate, .custom-news-title-country {
+    margin-bottom: 10px;
+}
+

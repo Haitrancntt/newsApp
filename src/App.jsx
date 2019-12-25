@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { apiKey } from './constants'
+
 import { fetchTopHeadlines } from '../src/actions/newsApi'
+import NewsComponent from '../src/components/News/NewsComponent'
+
 import './App.css'
 
 class App extends Component {
-    constructor(){
+    constructor() {
         super()
         this.state = {
             news: {}
@@ -12,23 +14,22 @@ class App extends Component {
     }
 
     componentDidMount() {
-        fetchTopHeadlines()
-    }
-
-    componentWillMount(nextState) {
-        setTimeout(() => {
+        fetchTopHeadlines().then(data => {
             this.setState({
-                news: JSON.parse(localStorage.getItem('articles'))
+                news: data.articles
             })
-        }, 1000)
+        })
     }
 
     renderArticles () {
         const articles = this.state.news
+        if (!articles) {
+            return
+        }
         let articleComponent = <div />
         articleComponent = Object.keys(articles).map(key => {
             return (
-                <div key={key}>{articles[key].author}</div>
+                <NewsComponent key={key} news={articles[key]} id={key} type='articles' />
             )
         });
         return articleComponent
@@ -36,9 +37,8 @@ class App extends Component {
 
     render() {
         return (
-            <div className='news-body'>
-                <h1>News</h1>
-                {this.state.news && this.renderArticles()}
+            <div className='news'>
+                {this.renderArticles()}
             </div>
         )
     }
