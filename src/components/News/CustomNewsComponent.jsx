@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { category, country } from '../../constants'
 import { fetchSource } from '../../actions/newsApi'
 import NewsComponent from './NewsComponent'
+import MenuComponent from '../Common/MenuComponent'
 
 import './CustomNewsComponent-style.css'
 class CustomNewsComponent extends Component {
@@ -53,13 +54,13 @@ class CustomNewsComponent extends Component {
         console.log(this.state.sources)
         return (
             <div className='custom-news-body'>
+                <MenuComponent />
+                <h1>Your Custom News</h1>
                 <span className='custom-news-title-cate'>Category:</span>
                 <div className='news-category'>{this.renderCategory()}</div>
-                <button>Clear</button>
                 <br/><br/>
                 <span className='custom-news-title-country'>Country:</span>
                 <div className='news-country'>{this.renderCountry()}</div>
-                <button>Clear</button>
 
                 <div>{this.renderSources()}</div>
             </div>

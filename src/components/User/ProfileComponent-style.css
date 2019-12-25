@@ -1,0 +1,10 @@
+.profile {
+    height: 250px;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px grey;
+}
+img {
+    width: 200px;
+    margin: 10px;
+}

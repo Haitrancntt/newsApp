@@ -1,0 +1,31 @@
+.input-signin {
+    text-align: center;
+    overflow: hidden;
+    width: min-content;
+    margin: auto;
+}
+
+.input-email-signin, .input-password-signin {
+    margin: 10px;
+    width: 300px;
+    text-align: center;
+    height: 40px;
+    border-radius: 20px; 
+}
+
+.button-signin {
+    overflow: hidden;
+    text-align: center;
+    margin: auto;
+    display: table;
+}
+
+.btn-signin, .btn-cancel {
+    width: 300px;
+    margin: 10px 5px 0 0;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}

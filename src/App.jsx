@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { fetchTopHeadlines } from '../src/actions/newsApi'
 import NewsComponent from '../src/components/News/NewsComponent'
+import MenuComponent from '../src/components/Common/MenuComponent'
 
 import './App.css'
 
@@ -38,6 +39,7 @@ class App extends Component {
     render() {
         return (
             <div className='news'>
+                <MenuComponent />
                 {this.renderArticles()}
             </div>
         )

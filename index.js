@@ -3,41 +3,27 @@ import ReactDOM from 'react-dom'
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link,
-    useRouteMatch,
-    useParams
+    Route
   } from "react-router-dom";
 
-import SignInComponent from './src/components/User/SignInComponent'
-import NewsDetailComponent from './src/components/News/NewsDetailComponent'
 import CustomNewsComponent from './src/components/News/CustomNewsComponent'
+
+import SignInComponent from './src/components/User/SignInComponent'
+import SignUpComponent from './src/components/User/SignUpComponent'
+import ProfileComponent from './src/components/User/ProfileComponent'
 
 import App from './src/App'
 
 const routing = (
 
     <Router>
-      <div>
-        <ul>
-          <li>
-            <Link to="/">Top Headlines</Link>
-          </li>
-          <li>
-            <Link to="/customnews">Your Favorite News</Link>
-          </li>
-          <li>
-            <Link to="/signin">Profile</Link>
-          </li>
-        </ul>
-      
       <Switch>
-          <Route exact path="/" component={App} />
-          <Route path="/customnews" component={CustomNewsComponent} />
+          <Route exact path="/" component={SignUpComponent} />
           <Route path="/signin" component={SignInComponent} />
-          <Route path="/detail/:id" component={NewsDetailComponent} />
+          <Route path="/home" component={App} />
+          <Route path="/customnews" component={CustomNewsComponent} />
+          <Route path="/profile" component={ProfileComponent} />
       </Switch>
-      </div>
     </Router>
 )
 

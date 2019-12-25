@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import { Link } from 'react-router-dom'
-
 import './NewsComponent-style.css'
 
 class NewsComponent extends Component {
@@ -13,11 +11,10 @@ class NewsComponent extends Component {
         const { news, id } = this.props
         return (
             <div key={id} className='news-item'>
-                <Link to={`/detail/${id}`}>
-                    <img className='news-image' src={news.urlToImage} />
-                    <p className='news-description'>{news.description}</p>
-                    <span className='news-author'>{news.author}</span>
-                </Link>
+                <img className='news-image' src={news.urlToImage} />
+                <p className='news-description'>{news.description}</p>
+                <div className='news-author'>{news.author}</div>
+                <div className='news-showmore'><a href={news.url}>Show more..</a></div>
             </div>
         )
     }
@@ -26,10 +23,10 @@ class NewsComponent extends Component {
         const { news, id } = this.props
         return (
             <div key={id} className='news-item'>
-                <Link to={`/detail/${id}`}>
-                    <span className='news-author'>{news.name}</span>
-                    <p className='news-description'>{news.description}</p>
-                </Link>
+                <img className='news-image' src='https://www.lendacademy.com/wp-content/uploads/2015/05/Marketplace-Lending-News.jpg' />
+                <div className='news-author'>{news.name}</div>
+                <p className='news-description'>{news.description}</p>
+                <div className='news-showmore'><a href={news.url}>Show more..</a></div>
             </div>
         )
     }

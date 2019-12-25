@@ -10,8 +10,6 @@ export const fetchTopHeadlines = (country='us', category='technology', q='apple'
           }
         }).then(result => {
             return result.json()
-        }).then(data => {
-            return data
         })
 }
 
@@ -40,7 +38,5 @@ export const fetchSource = (category, country) => {
           }
     }).then(result => {
        return result.json()
-    }).then(data => {
-        return data
     })
 }
